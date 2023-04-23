@@ -40,6 +40,30 @@ my_favorite_songs_dict = {
     'In This World': 4.02,
 }
 
+# сделал из словаря список списков
+my_favorite_songs_2 = []
+for song in my_favorite_songs_dict:
+    my_favorite_songs_2.extend([[song, my_favorite_songs_dict[song]]])
+
+# print(my_favorite_songs_2)
+
+# список из трех рандомных песен
+import random
+
+random_songs = []
+count = 0
+
+while count < 3:
+    random_songs.append(my_favorite_songs_2[random.randint(0, len(my_favorite_songs_2) - 1)])
+    count += 1
+
+# print(random_songs)
+
+# вывод
+print(f"Три песни {random_songs[0][0]}, {random_songs[1][0]}, {random_songs[2][0]}", end="") 
+print(f' звучат {sum([i[1] for i in random_songs])} минут')
+
+
 # Дополнительно для пунктов A и B
 # Пункт C.
 # Сгенерируйте случайные песни с помощью модуля random
