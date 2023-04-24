@@ -38,3 +38,15 @@ def number_of_month(number):
 print(number_of_month(3))
 print(number_of_month(2))
 print(number_of_month(15))
+
+# Да, вот мой вариант решения
+
+def what_month(m): 
+    months = {1:'январь, 31 день', 2:'февраль, 28 дней', 3:'март, 31 день', 4:'апрель, 30 дней', 5:'май, 31 день', 6:'июнь, 30 дней', 7 :'июль, 31 день', 8 : 'август, 31 день', 9 :'сенябрь, 30 дней', 10 :'октябрь, 31 день', 11 :'ноябрь, 30 дней', 12 :'декабрь, 31 день'}
+    if m in months:
+        return f"Вы ввели {months[m]}"
+    else:
+        return 'Такого месяца нет!'
+
+print(what_month(2))
+print(what_month(20))
