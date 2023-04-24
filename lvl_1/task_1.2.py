@@ -73,3 +73,16 @@ print(f' звучат {sum([i[1] for i in random_songs])} минут')
 # Пункт D.
 # Переведите минуты и секунды в формат времени. Используйте модуль datetime 
 
+# Да, хорошо. я использовал функцию random.sample
+from random import sample
+# Пункт С(А)
+time = 0
+for song in sample(my_favorite_songs, 3):
+    time += song[1]
+
+# Пункт C(B)
+time = 0
+for song in sample(tuple(my_favorite_songs_dict), 3):
+    time += my_favorite_songs_dict[song]
+
+print(f'Пункт C(B): Три песни звучат {round(time, 2)}')
