@@ -32,7 +32,7 @@ store = {
 
 
 
-# функция для получения ключа по значению из словаря
+# функция для получения ключа по значению в словаре
 
 def get_key(d, value):
     for k, v in d.items():
@@ -42,17 +42,19 @@ def get_key(d, value):
 
 for k, v in store.items():
     
-    print(get_key(titles, k,), end="")
-    
     count = 0
-    quantity = 0
+    quantity, quantity_all = 0, 0
     price = 0
+    sum, sum_all = 0, 0
 
     for el in v:        
         for key, value in v[count].items():
-            if key == 'quantity':
-                quantity += value
-            if key == 'price':
-                price += value
+            quantity = v[count]['quantity']
+            price = v[count]['price']
+            sum = quantity * price
+            
         count += 1
-    print(f" - {quantity} шт, стоимость {price} рублей")
+        quantity_all = quantity_all + quantity
+        sum_all = sum_all + sum
+    
+    print(f"{get_key(titles, k,)} - {quantity_all} шт, стоимость {sum_all} рублей")   
